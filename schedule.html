@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avirbhav TechFest 2024 - Event Schedule</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --accent-color: #ff6b6b;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(78, 84, 200, 0.8), rgba(143, 148, 251, 0.8)), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 80px;
+            color: white;
+            text-align: center;
+            margin-top: 76px;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Schedule Section */
+        .schedule-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Day Navigation */
+        .day-navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .day-button {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            margin: 0 10px 10px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .day-button.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .day-button:hover:not(.active) {
+            background: rgba(78, 84, 200, 0.1);
+        }
+        
+        /* Schedule Table */
+        .schedule-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .schedule-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .schedule-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .schedule-table tr:hover {
+            background-color: #f0f4ff;
+        }
+        
+        /* Category badges */
+        .category-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .tech-badge {
+            background-color: rgba(78, 84, 200, 0.15);
+            color: var(--primary-color);
+        }
+        
+        .chill-badge {
+            background-color: rgba(255, 107, 107, 0.15);
+            color: var(--accent-color);
+        }
+        
+        .game-badge {
+            background-color: rgba(76, 175, 80, 0.15);
+            color: #4caf50;
+        }
+        
+        /* Register button */
+        .register-button {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 3px 10px rgba(78, 84, 200, 0.3);
+        }
+        
+        .register-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+            color: white;
+        }
+        
+        /* Day content */
+        .day-content {
+            display: none;
+        }
+        
+        .day-content.active {
+            display: block;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .social-media {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .social-media li {
+            margin: 0 10px;
+        }
+        
+        .social-media a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-media a:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .page-header {
+                padding: 80px 0 60px;
+                margin-top: 66px;
+            }
+            
+            .schedule-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .schedule-table th, 
+            .schedule-table td {
+                padding: 10px;
+            }
+            
+            .navbar-brand img {
+                height: 50px;
+            }
+            
+            .day-button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+                margin: 0 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Bootstrap Navbar -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="aiml_logo.png" alt="College Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="winners.html">Winners</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="schedule.html">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title">AVIRBHAV 2024 Schedule</h1>
+            <p class="page-subtitle">Plan your experience with our detailed event schedule for September 10th and 11th</p>
+        </div>
+    </div>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section">
+        <div class="container">
+            <h2 class="section-title">Event Schedule</h2>
+            
+            <!-- Day Navigation -->
+            <div class="day-navigation">
+                <button class="day-button active" data-day="day1">September 10th</button>
+                <button class="day-button" data-day="day2">September 11th</button>
+            </div>
+            
+            <!-- Day 1 Schedule -->
+            <div class="day-content active" id="day1">
+                <div class="schedule-container">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Venue</th>
+                                <th>Time</th>
+                                <th>Category</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Technical Quiz</td>
+                                <td>AIML Block Lab-5</td>
+                                <td>9:30 AM</td>
+                                <td><span class="category-badge tech-badge">Tech Showdowns</span></td>
+                                <td><a href="https://forms.gle/uMHjNW843nkS64hSA" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>Art Attack</td>
+                                <td>AIML Block</td>
+                                <td>10:00 AM</td>
+                                <td><span class="category-badge chill-badge">Chill Zone</span></td>
+                                <td><a href="https://forms.gle/VS7z1iYBuTXqxpHCA" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>Idea Infusion</td>
+                                <td>AIML Block Lab1</td>
+                                <td>11:00 AM</td>
+                                <td><span class="category-badge tech-badge">Tech Showdowns</span></td>
+                                <td><a href="https://forms.gle/zyNnp624kBWC7cE26" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>Chess</td>
+                                <td>AIML Block Seminar Hall</td>
+                                <td>1:30 PM</td>
+                                <td><span class="category-badge game-badge">Game Zone</span></td>
+                                <td><a href="https://forms.gle/JFkMW9dB85gCb1zW6" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>Sudoku</td>
+                                <td>AIML Block Seminar Hall</td>
+                                <td>2:00 PM</td>
+                                <td><span class="category-badge game-badge">Game Zone</span></td>
+                                <td><a href="https://forms.gle/Dsuf8vpHkqiEgC4J9" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>App Critique</td>
+                                <td>AIML Block Lab1</td>
+                                <td>2:30 PM</td>
+                                <td><span class="category-badge tech-badge">Tech Showdowns</span></td>
+                                <td><a href="https://forms.gle/PErxN3z1siY4Qt3H7" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Day 2 Schedule -->
+            <div class="day-content" id="day2">
+                <div class="schedule-container">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Venue</th>
+                                <th>Time</th>
+                                <th>Category</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Technical Quiz Finals</td>
+                                <td>AIML Block Lab-5</td>
+                                <td>9:30 AM</td>
+                                <td><span class="category-badge tech-badge">Tech Showdowns</span></td>
+                                <td><a href="https://forms.gle/uMHjNW843nkS64hSA" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>Art Attack Exhibition</td>
+                                <td>AIML Block</td>
+                                <td>10:00 AM</td>
+                                <td><span class="category-badge chill-badge">Chill Zone</span></td>
+                                <td><a href="https://forms.gle/VS7z1iYBuTXqxpHCA" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>Idea Infusion Finals</td>
+                                <td>AIML Block Lab1</td>
+                                <td>11:00 AM</td>
+                                <td><span class="category-badge tech-badge">Tech Showdowns</span></td>
+                                <td><a href="https://forms.gle/zyNnp624kBWC7cE26" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>Chess Tournament</td>
+                                <td>AIML Block Seminar Hall</td>
+                                <td>1:30 PM</td>
+                                <td><span class="category-badge game-badge">Game Zone</span></td>
+                                <td><a href="https://forms.gle/JFkMW9dB85gCb1zW6" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>Sudoku Challenge</td>
+                                <td>AIML Block Seminar Hall</td>
+                                <td>2:00 PM</td>
+                                <td><span class="category-badge game-badge">Game Zone</span></td>
+                                <td><a href="https://forms.gle/Dsuf8vpHkqiEgC4J9" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                            <tr>
+                                <td>App Critique Finals</td>
+                                <td>AIML Block Lab1</td>
+                                <td>2:30 PM</td>
+                                <td><span class="category-badge tech-badge">Tech Showdowns</span></td>
+                                <td><a href="https://forms.gle/PErxN3z1siY4Qt3H7" class="register-button" target="_blank">Register</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p id="aiml-dept-text">@ 2024 AIML Dept | All Rights Reserved</p>
+            <ul class="social-media">
+                <li><a href="https://www.linkedin.com/company/ieee-cis-student-branch-chapter-swarnandhra/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.instagram.com/avirbhav2k24?igsh=d3BsbmJnbHNoamgx"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/@Avirbhav_2K24/videos"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- AOS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Day navigation functionality
+        document.querySelectorAll('.day-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.day-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Hide all day contents
+                document.querySelectorAll('.day-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show the selected day content
+                const dayId = this.getAttribute('data-day');
+                document.getElementById(dayId).classList.add('active');
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Add navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+    </script>
+</body>
+</html>
