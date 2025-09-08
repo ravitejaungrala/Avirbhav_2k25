@@ -105,30 +105,6 @@
             margin: 0 auto;
         }
         
-        /* Coming Soon Section */
-        .coming-soon {
-            text-align: center;
-            padding: 80px 0;
-        }
-        
-        .coming-soon-icon {
-            font-size: 5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .coming-soon h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-        }
-        
-        .coming-soon p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            color: var(--text-color);
-        }
         
         /* Coordinator Section */
         .coordinators-section {
@@ -276,6 +252,25 @@
             gap: 20px;
         }
         
+        .sub-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .sub-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
         /* Footer */
         .footer {
             background: linear-gradient(rgba(78, 84, 200, 0.8), rgba(143, 148, 251, 0.8)), 
@@ -300,6 +295,7 @@
             line-height: 1.6;
             opacity: 0.9;
         }
+
         
         .social-media {
             list-style: none;
@@ -379,14 +375,6 @@
             .navbar-brand img {
                 height: 50px;
             }
-            
-            .coming-soon h2 {
-                font-size: 2rem;
-            }
-            
-            .coming-soon-icon {
-                font-size: 4rem;
-            }
         }
         
         /* Animation for coordinator items */
@@ -449,219 +437,186 @@
         </div>
     </div>
 
-    <!-- Coming Soon Section -->
-    <section class="coming-soon" data-aos="fade-up">
+    <!-- Coordinators Section -->
+    <section class="coordinators-section">
         <div class="container">
-            <div class="coming-soon-icon">
-                <i class="fas fa-clock"></i>
-            </div>
-            <h2>Coordinator Information Coming Soon</h2>
-            <p>We're currently finalizing our team of student coordinators for AVIRBHAV 2025. The complete list with contact information will be available here shortly.</p>
-            <p>Please check back later for updates!</p>
-        </div>
-    </section>
-
-    <!-- Coordinators Section (Hidden for now) -->
-    <section class="coordinators-section" style="display: none;">
-        <div class="container">
-            <!-- Main Organizers -->
+            <!-- Event Organizers and Tech Shadows Combined -->
             <div class="main-organizers" data-aos="fade-up">
-                <h2 class="section-title">Event Organizers</h2>
+                <h2 class="section-title">Event Organizers </h2>
+                
+                <!-- Main Coordinators -->
                 <div class="main-coordinator-card">
                     <div class="main-coordinator-grid">
                         <div class="coordinator-item">
-                            <div class="coordinator-name">U.N.V. RAVI TEJA</div>
+                            <div class="coordinator-name">T. Koushik</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 7013666788
+                                <i class="fas fa-phone"></i> +91 6304944958
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">G. KARTHIK BHASKAR</div>
+                            <div class="coordinator-name">A.S.N Murthy</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 8099963336
+                                <i class="fas fa-phone"></i> +91 8309996920
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">K. BHANU TEJA</div>
+                            <div class="coordinator-name">A. Karthik</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9502647676
+                                <i class="fas fa-phone"></i> +91 9640961636
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">L. MEGHA SYAM</div>
+                            <div class="coordinator-name">K. Leela Muralidhar</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9573304843
+                                <i class="fas fa-phone"></i> +91 7569461388
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">KUMAR RUDRA</div>
+                            <div class="coordinator-name">A. Karthikeya</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9063360596
+                                <i class="fas fa-phone"></i> +91 8978399675
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">KOUSHIK</div>
+                            <div class="coordinator-name">N. Jaya Sri</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> Phone number not available
+                                <i class="fas fa-phone"></i> 
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <div class="main-organizers" data-aos="fade-up">
+                <h2 class="section-title">Tech Shadows</h2>
+                
+                <!-- Main Coordinators -->
+                <div class="main-coordinator-card">
+                    <div class="main-coordinator-grid">         
+            <!-- Tech Shadows -->
+                        <div class="coordinator-item">
+                            <div class="coordinator-name">M. Lahari</div>
+                            <div class="coordinator-phone">
+                                <i class="fas fa-phone"></i> 
+                            </div>
+                        </div>
+                        <div class="coordinator-item">
+                            <div class="coordinator-name">M. Tanuja</div>
+                            <div class="coordinator-phone">
+                                <i class="fas fa-phone"></i> 
+                            </div>
+                        </div>
+                        <div class="coordinator-item">
+                            <div class="coordinator-name">Siva Ram</div>
+                            <div class="coordinator-phone">
+                                <i class="fas fa-phone"></i> 
+                            </div>
+                        </div>
+                        <div class="coordinator-item">
+                            <div class="coordinator-name">Bhanu</div>
+                            <div class="coordinator-phone">
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Coordinator Cards -->
-            <div class="coordinator-cards">
-                <!-- Tech Showdowns -->
-                <div class="coordinator-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-header">
-                        <h2>Tech Showdowns</h2>
-                    </div>
-                    <div class="card-body">
+            <!-- Chill Zone -->
+            <div class="main-organizers" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="section-title">Chill Zone</h2>
+                
+                <div class="main-coordinator-card">
+                    <div class="main-coordinator-grid">
                         <div class="coordinator-item">
-                            <div class="coordinator-name">PRANEETH VASA</div>
+                            <div class="coordinator-name">Asha</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 8328571819
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">K. NEERAJA</div>
+                            <div class="coordinator-name">Likitha</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 8106990656
-                            </div>
-                        </div>
-                        <div class="coordinator-item">
-                            <div class="coordinator-name">M. JYOTHI</div>
-                            <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9381131378
-                            </div>
-                        </div>
-                        <div class="coordinator-item">
-                            <div class="coordinator-name">LIKITH</div>
-                            <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 7893789031
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Chill Zone -->
-                <div class="coordinator-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-header">
-                        <h2>Chill Zone</h2>
-                    </div>
-                    <div class="card-body">
+            <!-- Games (Online) -->
+            <div class="main-organizers" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="section-title">Games - Online</h2>
+                
+                <div class="main-coordinator-card">
+                    <div class="main-coordinator-grid">
                         <div class="coordinator-item">
-                            <div class="coordinator-name">DURGA PRASAD</div>
+                            <div class="coordinator-name">Bhanu</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9553950479
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">P. VINAY</div>
+                            <div class="coordinator-name">Surya</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9642324495
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">B. CHANDRIKA</div>
+                            <div class="coordinator-name">Ch. Sravanthi</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 7680966610
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">RAKESH</div>
+                            <div class="coordinator-name">U. Mahesh</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> Phone number not available
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">K. JHANAVI</div>
+                            <div class="coordinator-name">Teja</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9347981850
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Game Zone -->
-                <div class="coordinator-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-header">
-                        <h2>Game Zone</h2>
-                    </div>
-                    <div class="card-body">
+            <!-- Games (Offline) -->
+            <div class="main-organizers" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="section-title">Games - Offline</h2>
+                
+                <div class="main-coordinator-card">
+                    <div class="main-coordinator-grid">
                         <div class="coordinator-item">
-                            <div class="coordinator-name">E. JEJI ANIL</div>
+                            <div class="coordinator-name">Ch. Varshini</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9642324495
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">K. VAMSI</div>
+                            <div class="coordinator-name">M. Pavitra</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9849277879
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">B. VIJAYA</div>
+                            <div class="coordinator-name">Teja</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 7036348948
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">PRASAD</div>
+                            <div class="coordinator-name">Yamini</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 7981017915
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                         <div class="coordinator-item">
-                            <div class="coordinator-name">MALLI KARJUN</div>
+                            <div class="coordinator-name">Gayathri</div>
                             <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9666453219
-                            </div>
-                        </div>
-                        <div class="coordinator-item">
-                            <div class="coordinator-name">K.C.V. GOPI KRISHNA</div>
-                            <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9392796088
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cultural Coordinators -->
-                <div class="coordinator-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card-header">
-                        <h2>Cultural Coordinators</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="coordinator-item">
-                            <div class="coordinator-name">SHANMUKH SAI</div>
-                            <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 7207435349
-                            </div>
-                        </div>
-                        <div class="coordinator-item">
-                            <div class="coordinator-name">V.S.C. YESAWINI</div>
-                            <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 7989193698
-                            </div>
-                        </div>
-                        <div class="coordinator-item">
-                            <div class="coordinator-name">M.S.R. CHANDRIKA</div>
-                            <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9642416755
-                            </div>
-                        </div>
-                        <div class="coordinator-item">
-                            <div class="coordinator-name">A. HEMANTH</div>
-                            <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 9032837064
-                            </div>
-                        </div>
-                        <div class="coordinator-item">
-                            <div class="coordinator-name">K. SWARNA</div>
-                            <div class="coordinator-phone">
-                                <i class="fas fa-phone"></i> +91 7207448350
+                                <i class="fas fa-phone"></i> 
                             </div>
                         </div>
                     </div>
@@ -676,7 +631,7 @@
             <p id="aiml-dept-text">@ 2025 AIML Dept | All Rights Reserved</p>
             <ul class="social-media">
                 <li><a href="https://www.linkedin.com/company/ieee-cis-student-branch-chapter-swarnandhra/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://www.instagram.com/avirbhav2k25?igsh=d3BsbmJnbHNoamgx"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.instagram.com/avirbhav2k24?igsh=d3BsbmJnbHNoamgx"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="https://www.youtube.com/@Avirbhav_2K24/videos"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
